@@ -1,0 +1,6 @@
+./build_/src/app/imgcmp
+-f
+@@
+-F
+@@
+-n
