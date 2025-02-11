@@ -1,3 +1,7 @@
+// removed
+// 		{CMDOPT_INOPT, "input-option", JAS_OPT_HASARG},
+// {CMDOPT_OUTOPT, "output-option", JAS_OPT_HASARG},
+
 /*
  * Copyright (c) 1999-2000 Image Power, Inc. and the University of
  *   British Columbia.
@@ -398,10 +402,10 @@ cmdopts_t *cmdopts_parse(int argc, char **argv)
 		CMDOPT_QUIET,
 		CMDOPT_INFILE,
 		CMDOPT_INFMT,
-		CMDOPT_INOPT,
+		// CMDOPT_INOPT,
 		CMDOPT_OUTFILE,
 		CMDOPT_OUTFMT,
-		CMDOPT_OUTOPT,
+		// CMDOPT_OUTOPT,
 		CMDOPT_VERSION,
 		CMDOPT_DEBUG,
 		CMDOPT_CMPTNO,
@@ -414,23 +418,23 @@ cmdopts_t *cmdopts_parse(int argc, char **argv)
 	};
 
 	static const jas_opt_t cmdoptions[] = {
-		{CMDOPT_HELP, "help", 0},
+		// {CMDOPT_HELP, "help", 0},
 		{CMDOPT_VERBOSE, "verbose", 0},
 		{CMDOPT_QUIET, "quiet", 0},
 		{CMDOPT_QUIET, "q", 0},
-		{CMDOPT_INFILE, "input", JAS_OPT_HASARG},
+		// {CMDOPT_INFILE, "input", JAS_OPT_HASARG},
 		{CMDOPT_INFILE, "f", JAS_OPT_HASARG},
 		{CMDOPT_INFMT, "input-format", JAS_OPT_HASARG},
-		{CMDOPT_INFMT, "t", JAS_OPT_HASARG},
-		{CMDOPT_INOPT, "input-option", JAS_OPT_HASARG},
-		{CMDOPT_INOPT, "o", JAS_OPT_HASARG},
-		{CMDOPT_OUTFILE, "output", JAS_OPT_HASARG},
+		// {CMDOPT_INFMT, "t", JAS_OPT_HASARG},
+		// {CMDOPT_INOPT, "input-option", JAS_OPT_HASARG},
+		// {CMDOPT_INOPT, "o", JAS_OPT_HASARG},
+		// {CMDOPT_OUTFILE, "output", JAS_OPT_HASARG},
 		{CMDOPT_OUTFILE, "F", JAS_OPT_HASARG},
 		{CMDOPT_OUTFMT, "output-format", JAS_OPT_HASARG},
-		{CMDOPT_OUTFMT, "T", JAS_OPT_HASARG},
-		{CMDOPT_OUTOPT, "output-option", JAS_OPT_HASARG},
-		{CMDOPT_OUTOPT, "O", JAS_OPT_HASARG},
-		{CMDOPT_VERSION, "version", 0},
+		// {CMDOPT_OUTFMT, "T", JAS_OPT_HASARG},
+		// {CMDOPT_OUTOPT, "output-option", JAS_OPT_HASARG},
+		// {CMDOPT_OUTOPT, "O", JAS_OPT_HASARG},
+		// {CMDOPT_VERSION, "version", 0},
 		{CMDOPT_DEBUG, "debug-level", JAS_OPT_HASARG},
 		{CMDOPT_CMPTNO, "cmptno", JAS_OPT_HASARG},
 		{CMDOPT_SRGB, "force-srgb", 0},
@@ -504,20 +508,20 @@ cmdopts_t *cmdopts_parse(int argc, char **argv)
 		case CMDOPT_INFMT:
 			cmdopts->infmt_str= jas_optarg;
 			break;
-		case CMDOPT_INOPT:
-			addopt(cmdopts->inoptsbuf, OPTSMAX, jas_optarg);
-			cmdopts->inopts = cmdopts->inoptsbuf;
-			break;
+		// case CMDOPT_INOPT:
+		// 	addopt(cmdopts->inoptsbuf, OPTSMAX, jas_optarg);
+		// 	cmdopts->inopts = cmdopts->inoptsbuf;
+		// 	break;
 		case CMDOPT_OUTFILE:
 			cmdopts->outfile = jas_optarg;
 			break;
 		case CMDOPT_OUTFMT:
 			cmdopts->outfmt_str = jas_optarg;
 			break;
-		case CMDOPT_OUTOPT:
-			addopt(cmdopts->outoptsbuf, OPTSMAX, jas_optarg);
-			cmdopts->outopts = cmdopts->outoptsbuf;
-			break;
+		// case CMDOPT_OUTOPT:
+		// 	addopt(cmdopts->outoptsbuf, OPTSMAX, jas_optarg);
+		// 	cmdopts->outopts = cmdopts->outoptsbuf;
+		// 	break;
 		case CMDOPT_CMPTNO:
 			cmdopts->cmptno = atoi(jas_optarg);
 			break;

@@ -1,3 +1,6 @@
+// removed
+// {OPT_METRIC, "m", JAS_OPT_HASARG},
+
 /*
  * Copyright (c) 2001-2003 Michael David Adams.
  * All rights reserved.
@@ -92,7 +95,7 @@ typedef enum {
 	OPT_QUIET,
 	OPT_ORIG,
 	OPT_RECON,
-	OPT_METRIC,
+	// OPT_METRIC,
 	OPT_MAXONLY,
 	OPT_MINONLY,
 	OPT_DIFFIMAGE,
@@ -141,13 +144,13 @@ static jas_taginfo_t metrictab[] = {
 static const jas_opt_t opts[] = {
 	{OPT_HELP, "help", 0},
 	{OPT_VERSION, "version", 0},
-	{OPT_VERBOSE, "verbose", 0},
+	// {OPT_VERBOSE, "verbose", 0},
 	{OPT_VERBOSE, "v", 0},
-	{OPT_QUIET, "quiet", 0},
+	// {OPT_QUIET, "quiet", 0},
 	{OPT_QUIET, "q", 0},
 	{OPT_ORIG, "f", JAS_OPT_HASARG},
 	{OPT_RECON, "F", JAS_OPT_HASARG},
-	{OPT_METRIC, "m", JAS_OPT_HASARG},
+	// {OPT_METRIC, "m", JAS_OPT_HASARG},
 	{OPT_MAXONLY, "max", 0},
 	{OPT_MINONLY, "min", 0},
 	{OPT_DIFFIMAGE, "d", JAS_OPT_HASARG},
@@ -222,9 +225,9 @@ int main(int argc, char **argv)
 		case OPT_MINONLY:
 			minonly = 1;
 			break;
-		case OPT_METRIC:
-			metricname = jas_optarg;
-			break;
+		// case OPT_METRIC:
+		// 	metricname = jas_optarg;
+		// 	break;
 		case OPT_ORIG:
 			origpath = jas_optarg;
 			break;
