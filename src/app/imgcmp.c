@@ -1,4 +1,3 @@
-// modified for VAFuzz
 /*
  * Copyright (c) 2001-2003 Michael David Adams.
  * All rights reserved.
@@ -140,23 +139,22 @@ static jas_taginfo_t metrictab[] = {
 };
 
 static const jas_opt_t opts[] = {
-	// {OPT_HELP, "help", 0},
-	// {OPT_VERSION, "version", 0},
-	// {OPT_VERBOSE, "verbose", 0},
+	{OPT_HELP, "help", 0},
+	{OPT_VERSION, "version", 0},
+	{OPT_VERBOSE, "verbose", 0},
 	{OPT_VERBOSE, "v", 0},
-	// {OPT_QUIET, "quiet", 0},
+	{OPT_QUIET, "quiet", 0},
 	{OPT_QUIET, "q", 0},
 	{OPT_ORIG, "f", JAS_OPT_HASARG},
 	{OPT_RECON, "F", JAS_OPT_HASARG},
-	// {OPT_METRIC, "m", JAS_OPT_HASARG},
-	// {OPT_MAXONLY, "max", 0},
-	// {OPT_MINONLY, "min", 0},
-	{OPT_MAXONLY, "m", 0},
-	{OPT_MINONLY, "n", 0},
-	// {OPT_DIFFIMAGE, "d", JAS_OPT_HASARG},
-	// {OPT_MAXMEM, "memory-limit", JAS_OPT_HASARG},
-	// {OPT_DEBUGLEVEL, "debug-level", JAS_OPT_HASARG},
-	{-1, 0, 0}};
+	{OPT_METRIC, "m", JAS_OPT_HASARG},
+	{OPT_MAXONLY, "max", 0},
+	{OPT_MINONLY, "min", 0},
+	{OPT_DIFFIMAGE, "d", JAS_OPT_HASARG},
+	{OPT_MAXMEM, "memory-limit", JAS_OPT_HASARG},
+	{OPT_DEBUGLEVEL, "debug-level", JAS_OPT_HASARG},
+	{-1, 0, 0}
+};
 
 static char *cmdname = 0;
 
@@ -224,9 +222,9 @@ int main(int argc, char **argv)
 		case OPT_MINONLY:
 			minonly = 1;
 			break;
-		// case OPT_METRIC:
-		// 	metricname = jas_optarg;
-		// 	break;
+		case OPT_METRIC:
+			metricname = jas_optarg;
+			break;
 		case OPT_ORIG:
 			origpath = jas_optarg;
 			break;
@@ -239,20 +237,20 @@ int main(int argc, char **argv)
 		case OPT_QUIET:
 			verbose = -1;
 			break;
-		// case OPT_DIFFIMAGE:
-		// 	diffpath = jas_optarg;
-		// 	break;
-		// case OPT_VERSION:
-		// 	printf("%s\n", JAS_VERSION);
-		// 	exit_status = EXIT_OK;
-		// 	goto cleanup;
-		// 	break;
-		// case OPT_MAXMEM:
-		// 	max_mem = strtoull(jas_optarg, 0, 10);
-		// 	break;
-		// case OPT_DEBUGLEVEL:
-		// 	debug_level = atoi(jas_optarg);
-		// 	break;
+		case OPT_DIFFIMAGE:
+			diffpath = jas_optarg;
+			break;
+		case OPT_VERSION:
+			printf("%s\n", JAS_VERSION);
+			exit_status = EXIT_OK;
+			goto cleanup;
+			break;
+		case OPT_MAXMEM:
+			max_mem = strtoull(jas_optarg, 0, 10);
+			break;
+		case OPT_DEBUGLEVEL:
+			debug_level = atoi(jas_optarg);
+			break;
 		case OPT_HELP:
 		default:
 			usage();
